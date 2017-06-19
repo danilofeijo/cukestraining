@@ -7,9 +7,31 @@ Feature: Login
 		When I open login page
 		Then I see "Faça seu login" message
 
-	Scenario:  
+	Scenario: Successfull login
 		Given I have a user:
-			| user     | kato.danzo@qaninja.com.br |
-			| password | secret 				   |
+			| user     | danilo.silvafs@gmail.com |
+			| password | Test;123				  |
 		When I login invoices site 
-		Then I see "Bem Vindo Kato Danzo!" message on Dashboard
+		Then I see "Bem Vindo Danilo Feijó!" message on Dashboard
+			And I see user mail on header page
+	
+	Scenario: Invalid password
+		Given I have a user:
+			| user     | danilo.silvafs@gmail.com |
+			| password | wrongP@55				  |
+		When I login invoices site
+		Then I see alert message "Incorrect password"
+	
+	Scenario: User not found
+		Given I have a user:
+			| user     | danilo@notfound.com |
+			| password | Test;123			 |
+		When I login invoices site
+		Then I see alert message "User not found"
+	
+	Scenario: Invalid usermail
+		Given I have a user:
+			| user     | danilo.silvafs*gmail.com |
+			| password | Test;123				  |
+		When I login invoices site
+		Then I see alert message "Please enter your e-mail address."
