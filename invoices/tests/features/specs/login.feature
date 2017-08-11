@@ -5,16 +5,17 @@ Feature: Login
 
 	Background:
 		When I open login page
-		Then I see "Faça seu login" message
+		Then I see "Faça o login para acessar sua conta" message
 
+	@logout
 	Scenario: Successfull login
 		Given I have a user:
 			| user     | danilo.silvafs@gmail.com |
 			| password | Test;123				  |
 		When I login invoices site 
-		Then I see "Bem Vindo Danilo Feijó!" message on Dashboard
+		Then I see "Olá, Danilo Feijó, seja bem vindo ao Invoices..." message on Dashboard
 			And I see user mail on header page
-	
+
 	Scenario: Invalid password
 		Given I have a user:
 			| user     | danilo.silvafs@gmail.com |

@@ -4,7 +4,7 @@ When(/^I open login page$/) do
 end
 
 Then(/^I see "([^"]*)" message$/) do |login_message|
-	page_title = find('#login_form').text
+	page_title = find('#login_form h5').text
 	expect(page_title).to include login_message
 
 	expect(find('#login_form').text).to include login_message
@@ -18,6 +18,7 @@ end
 When(/^I login invoices site$/) do
 	find('#email').set @user
 	find('#password').set @password
+	find('#login_form h1').click
 	find('button.login-button').click
 end
 
