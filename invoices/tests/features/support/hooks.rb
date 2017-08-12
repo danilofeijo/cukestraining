@@ -10,6 +10,7 @@
 After ('@logout') do
 	find('#menu-item-dropdown a[data-toggle=dropdown]').click
 	find('a[href$=logout]').click
+	visit '/login'
 end
 
 Before do
