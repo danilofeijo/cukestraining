@@ -15,6 +15,16 @@ Given(/^I have a user:$/) do |table|
 	@password = table.rows_hash['password']
 end
 
+Given(/^I have a "([^"]*)" user and "([^"]*)" pass$/) do |user, pass|
+	@user = user
+	@password = pass
+end
+
+Given(/^I have a user list: (\d+)$/) do |index, users_table|
+	@user = users_table.hashes[index.to_i]['user']
+	@password = users_table.hashes[index.to_i]['pass']
+end
+
 When(/^I login invoices site$/) do
 	find('#email').set @user
 	find('#password').set @password
