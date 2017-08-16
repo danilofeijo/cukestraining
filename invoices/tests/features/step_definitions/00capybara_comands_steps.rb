@@ -19,13 +19,13 @@ Given(/^I have a list of of Capybara commands$/) do
 
 	find('#id').click # ----------------------- # Clica em um elemento - ID, css, regex, XPath [validate]
 
-	find('.id').click
+	find('.class').click
 	find('css').click
 	find('regex').click
 
 	# Preenche um campo especificado
 	find('#id').set 'email'
-	find('.id').set 'senha'
+	find('.class').set 'senha'
 	find('css').set 'texto'
 	find('regex').set 'texto'
 
