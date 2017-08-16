@@ -23,21 +23,21 @@ Feature: Login
 			| user     | danilo.silvafs@gmail.com |
 			| password | wrongP@55				  |
 		When I login invoices site
-		Then I see alert message "Incorrect password"
+		Then I see alert message "Senha inválida."
 	
 	Scenario: User not found
 		Given I have a user:
 			| user     | danilo@notfound.com |
 			| password | Test;123			 |
 		When I login invoices site
-		Then I see alert message "User not found"
+		Then I see alert message "Usuário não cadastrado."
 	
 	Scenario: Invalid usermail
 		Given I have a user:
 			| user     | danilo.silvafs*gmail.com |
 			| password | Test;123				  |
 		When I login invoices site
-		Then I see alert message "Please enter your e-mail address."
+		Then I see alert message "Informe um email válido."
 
 # The same scenario with Scenario Outline
 
@@ -47,10 +47,10 @@ Feature: Login
 		Then I see alert message <message_error>
 
 		Examples:
-		| user 						 | pass		  | message_error 						|
-		| "danilo.silvafs@gmail.com" | "WrngPass" | "Incorrect password"				|
-		| "danilonotfound@gmail.com" | "Test;123" | "User not found"					|
-		| "danilo.silvafs*gmail.com" | "Test;123" | "Please enter your e-mail address." |
+		| user 						 | pass		  | message_error			   |
+		| "danilo.silvafs@gmail.com" | "WrngPass" | "Senha inválida."		   |
+		| "danilonotfound@gmail.com" | "Test;123" | "Usuário não cadastrado."  |
+		| "danilo.silvafs*gmail.com" | "Test;123" | "Informe um email válido." |
 
 # The same scenario blending Table and Scenario Outline
 
@@ -64,8 +64,8 @@ Feature: Login
 		Then I see alert message <message_error>
 
 		Examples:
-			|index|message_error|
-			| 0 | "Incorrect password"				  |
-			| 1 | "User not found"					  |
-			| 2 | "Please enter your e-mail address." |
+			|index|message_error			 |
+			| 0 | "Senha inválida."			 |
+			| 1 | "Usuário não cadastrado."	 |
+			| 2 | "Informe um email válido." |
 		
