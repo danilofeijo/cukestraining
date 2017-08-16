@@ -4,6 +4,7 @@ require 'capybara/dsl'				# Added to keep user section after scenario executions
 require 'capybara/rspec/matchers'	# Added to keep user section after scenario executions
 require 'selenium-webdriver'
 require 'rspec'
+require 'site_prism'
 
 World(Capybara::DSL)				# Added to keep user section after scenario executions
 World(Capybara::RSpecMatchers)		# Added to keep user section after scenario executions
