@@ -56,7 +56,7 @@ Then(/^I see "([^"]*)" message on Dashboard$/) do |welcome_message|
 	# expect(page_title).to eq welcome_message
 	
 	dash = DashboardPage.new
-	expect(dash.title.text).to eq welcome_message
+	expect(dash.title.text).to eq welcome_message	# eq = exatamente igual
 end
 
 Then(/^I see user mail on header page$/) do
