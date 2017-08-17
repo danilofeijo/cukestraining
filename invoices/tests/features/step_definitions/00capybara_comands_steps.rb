@@ -31,9 +31,9 @@ Given(/^I have a list of of Capybara commands$/) do
 
 	# About regex
 
-	('div[class=class-example]');		# class IGUAL a classe mencionada
-	('div[class="class1 class2"]');		# class IGUAL AS classes mencionadas
-	('div[class*=class-example]');		# class CONTEN a classe mencionada
-	('div[class$=class-example]');		# class TERMINA COM a classe mencionada
-	('div[class^=class-example]');		# class COMEÇA COM a classe mencionada
+	('div[class=class-example]');	# class IGUAL a classe mencionada
+	('div[class="class1 class2"]');	# class IGUAL AS classes mencionadas
+	('div[class*=class-example]');	# class CONTEN a classe mencionada
+	('div[class$=class-example]');	# class TERMINA COM a classe mencionada
+	('div[class^=class-example]');	# class COMEÇA COM a classe mencionada
 end
