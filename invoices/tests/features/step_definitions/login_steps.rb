@@ -7,14 +7,16 @@ When(/^I open login page$/) do
 	@home.login.click
 end
 
-Then(/^I see "([^"]*)" message$/) do |login_message|
+Then(/^I see Login page$/) do
 	# Coded without pageObjects
 	# page_title = find('#login_form h5').text
 	# expect(page_title).to include login_message
 	# expect(find('#login_form').text).to include login_message
 	
-	@login = LoginPage.new
-	expect(@login.form.text).to include login_message
+	@login.wait_for_form
+	expect(@login).to have_form
+	expect(@login.form.text).to include 'Faça o login para acessar sua conta'
+	expect(@login.form.text).to include('Faça o login para acessar sua conta') #suggest by rspec-snippets
 end
 
 Given(/^I have a user:$/) do |table|

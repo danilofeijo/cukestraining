@@ -5,7 +5,7 @@ Feature: Login
 
 	Scenario: Opening log in page
 		When I open login page
-		Then I see "Faça o login para acessar sua conta" message
+		Then I see Login page
 
 	@logout
 	Scenario: Successfull login
