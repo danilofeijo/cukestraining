@@ -39,10 +39,13 @@ When(/^I login invoices site$/) do
 	# find('#login_form h5').click
 	# find('button.login-button').click
 	
-	@login.username.set @user
-	@login.password.set @password
-	@login.title.click
-	@login.login_button.click
+	# Coded with simple pageObjects
+	# @login.username.set @user
+	# @login.password.set @password
+	# @login.title.click
+	# @login.login_button.click
+
+	@login.with(@user, @password)
 end
 
 Then(/^I see "([^"]*)" message on Dashboard$/) do |welcome_message|

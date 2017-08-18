@@ -19,10 +19,12 @@ After ('@logout') do
 	# find('#menu-item-dropdown a[data-toggle=dropdown]').click
 	# find('a[href$=logout]').click
 	# visit '/login'
-
-	nav = NavbarPage.new
-	login = LoginPage.new
-	nav.user_menu.click
-	nav.option_sair.click
-	login.load
+	
+	# Coded with simple pageObjects
+	# @nav.user_menu.click
+	# @nav.option_sair.click
+	# @login.load
+	
+	@nav.logout
+	@login.load
 end
