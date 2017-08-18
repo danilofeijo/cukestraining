@@ -49,9 +49,9 @@ end
 
 Then(/^I see "([^"]*)" message on Dashboard$/) do |welcome_message|
 	# Coded without pageObjects
-	# Contract form
+	# Contract model
 	# expect(find('#page_title').text).to have_content welcome_message
-	# Expanded form
+	# Expanded model
 	# page_title = find('#page_title').text
 	# expect(page_title).to eq welcome_message
 	
