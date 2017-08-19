@@ -12,6 +12,7 @@ Before do
 	@login = LoginPage.new
 	@dash = DashboardPage.new
 	@nav = NavbarPage.new
+	@customers = CustomersPage.new
 end
 
 After ('@logout') do

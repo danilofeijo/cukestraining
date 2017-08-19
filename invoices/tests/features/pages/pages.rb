@@ -25,6 +25,8 @@ class LoginPage < SitePrism::Page
 end
 
 class NavbarPage < SitePrism::Page
+	element :customers_option, 'a[href$=customers]'
+	
 	element :user_menu, '#menu-item-dropdown a[data-toggle=dropdown]'
 	element :option_sair, 'a[href$=logout]'
 
@@ -36,4 +38,10 @@ end
 
 class DashboardPage < SitePrism::Page
 	element :title, '#page_title'
+end
+
+class CustomersPage < SitePrism::Page
+	element :newclient_button, '#dataview-insert-button'	
+	
+	element :newclient_form, 'form'
 end
