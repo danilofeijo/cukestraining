@@ -18,15 +18,25 @@ end
   
 When(/^I register this customer$/) do
 	@nav.customers_option.click
-	@customers.wait_for_newclient_button
-	@customers.newclient_button.click
-	@customers.wait_for_newclient_form
+	@customer.wait_for_newCustomer_button
+	@customer.newCustomer_button.click
+	@customer.wait_for_newCustomer_form
+
+	@customer.name_field.set @user_name
+	@customer.phone_field.set @user_phone
+	@customer.email_field.set @user_email
+	@customer.maleGenre_radio.click
 	
-	# To Do
-	# Identify and Fill
-	# fields do add new customer
+	@customer.notes.set @user_notes
+	@customer.emailAlert_checkbox.click
+	
+	# @customer.profile_dropdown.click
+
+	@customer.save_button.click
+
+	sleep(5)
 end
-  
+
 Then(/^I see this customer listed on customers list$/) do
 	pending # Write code here that turns the phrase above into concrete actions
 end

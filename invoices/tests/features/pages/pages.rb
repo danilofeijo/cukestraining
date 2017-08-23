@@ -40,8 +40,26 @@ class DashboardPage < SitePrism::Page
 	element :title, '#page_title'
 end
 
-class CustomersPage < SitePrism::Page
-	element :newclient_button, '#dataview-insert-button'	
+class CustomerPage < SitePrism::Page
+	set_url '/customers'
+
+	element :newCustomer_button, '#dataview-insert-button'	
+	element :deleteCustomer_button, '#delete-button'	
 	
-	element :newclient_form, 'form'
+	element :newCustomer_form, 'form'
+	
+	element :name_field, 'input[name=name]'
+	element :phone_field, 'input[name=phone]'
+	element :email_field, 'input[name=email]'
+	element :maleGenre_radio, 'input[name=radio-m]'
+	# element :profile_dropdown, '#type-customer'
+	# element :prime_profile_dropdownOption, ''
+	element :notes, 'textarea[name=note]'
+	element :emailAlert_checkbox, 'input[type=checkbox]'
+
+	element :save_button, '#form-submit-button'
+
+	element :delete_overlay, '.modal-content'
+	element :deleteConfirm_button, 'button[data-bb-handler=success]'
+	element :deleteCancel_button, 'button[data-bb-handler=danger]'
 end
