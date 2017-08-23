@@ -12,7 +12,7 @@ Before do
 	@login = LoginPage.new
 	@dash = DashboardPage.new
 	@nav = NavbarPage.new
-	@customers = CustomersPage.new
+	@customer = CustomerPage.new
 end
 
 After ('@logout') do
@@ -28,4 +28,14 @@ After ('@logout') do
 	
 	@nav.logout
 	@login.load
+end
+
+After ('@deleteCustomer') do
+	@customer.load
+	@customer.wait_for_deleteCustomer_button
+
+	@customer.deleteCustomer_button.click
+	@customer.wait_for_delete_overlay
+	
+	@customer.deleteConfirm_button.click
 end
