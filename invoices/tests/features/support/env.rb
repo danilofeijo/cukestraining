@@ -5,6 +5,7 @@ require 'capybara/rspec/matchers'	# Added to keep user section after scenario ex
 require 'selenium-webdriver'
 require 'rspec'
 require 'site_prism'
+require 'faker'
 
 World(Capybara::DSL)				# Added to keep user section after scenario executions
 World(Capybara::RSpecMatchers)		# Added to keep user section after scenario executions
