@@ -52,7 +52,7 @@ class CustomerPage < SitePrism::Page
 	element :phone_field, 'input[name=phone]'
 	element :email_field, 'input[name=email]'
 	element :maleGenre_radio, 'input[name=radio-m]'
-	# element :profile_dropdown, '#type-customer'
+	element :profile_dropdown, '#type-customer'
 	# element :prime_profile_dropdownOption, ''
 	element :notes, 'textarea[name=note]'
 	element :emailAlert_checkbox, 'input[type=checkbox]'

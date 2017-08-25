@@ -20,7 +20,7 @@ Given(/^I have a customer registration$/) do # |user_table|
 end
   
 Given(/^this customer has "([^"]*)" profile$/) do |user_profile|
-	@profile = user_profile
+	@user_profile = user_profile
 end
   
 When(/^I register this customer$/) do
@@ -33,7 +33,7 @@ When(/^I register this customer$/) do
 	@customer.phone_field.set @user_phone
 	@customer.email_field.set @user_email
 	@customer.maleGenre_radio.click
-	
+	@customer.profile_dropdown.find('option', text: @user_profile).select_option
 	@customer.notes.set @user_notes
 	@customer.emailAlert_checkbox.click
 	
