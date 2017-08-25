@@ -5,11 +5,18 @@ Given(/^user login$/) do
 	@login.with('danilo.silvafs@gmail.com', 'Test;123')
 end
 
-Given(/^I have a customer registration:$/) do |user_table|
-	@user_name = user_table.rows_hash['name']
-	@user_phone = user_table.rows_hash['phone']
-	@user_email = user_table.rows_hash['email']
-	@user_notes = user_table.rows_hash['notes']
+Given(/^I have a customer registration$/) do # |user_table|
+	# With fixed data (needs add data on feature)
+	# @user_name = user_table.rows_hash['name']
+	# @user_phone = user_table.rows_hash['phone']
+	# @user_email = user_table.rows_hash['email']
+	# @user_notes = user_table.rows_hash['notes']
+
+	# Using Faker - https://github.com/stympy/faker
+	@user_name = "#{Faker::Name.first_name} #{Faker::Name.last_name}"
+	@user_phone = Faker::PhoneNumber.cell_phone							#=> "(186)285-7925"
+	@user_email = Faker::Internet.free_email(@user_name)				#=> "nancy@yahoo.com"
+	@user_notes = Faker::Lorem.sentence									#=> "Dolore illum animi et neque accusantium."
 end
   
 Given(/^this customer has "([^"]*)" profile$/) do |user_profile|

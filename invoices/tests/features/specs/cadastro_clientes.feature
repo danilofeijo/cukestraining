@@ -8,11 +8,7 @@ Feature: Customer registration
 
 	@dev @deleteCustomer
 	Scenario: Register new client
-		Given I have a customer registration:
-			| name  | Jon Snow			|
-			| phone | +55 19 94444-4444	|
-			| email | dfeijo@test.com	|
-			| notes | Lorem Ipsum 01	|
+		Given I have a customer registration
 			And this customer has "Prime" profile 
 		When I register this customer
 		Then I see this customer listed on customers list
