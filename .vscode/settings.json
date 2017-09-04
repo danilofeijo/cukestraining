@@ -1,0 +1,13 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "workbench.iconTheme": "file-icons",
+    "workbench.colorTheme": "One Dark Pro",
+    "window.menuBarVisibility": "toggle",
+    "workbench.activityBar.visible": true,
+    "editor.insertSpaces": false,
+    "workbench.sideBar.location": "left",
+    "editor.tabCompletion": true,
+	"editor.detectIndentation": false,
+	"editor.renderIndentGuides": true,
+	"editor.renderLineHighlight": "all"
+}
