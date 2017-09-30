@@ -23,7 +23,7 @@ end
 
 # Choose default browser (Chrome and Firefox)
 Capybara.configure do |config|
-	config.default_driver = :chrome
+	config.default_driver = :chrome # (Check it ASAP - hooks "before" doesn't work)
 	# config.default_driver = :selenium
 	config.app_host = 'http://ninjainvoices.herokuapp.com'
 end
